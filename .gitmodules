@@ -1,0 +1,3 @@
+[submodule "liblsqecc"]
+	path = liblsqecc
+	url = https://github.com/satvikmaurya/liblsqecc.git

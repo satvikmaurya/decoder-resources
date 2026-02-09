@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: ${USER}/vader
+    volumes:
+      - ${PWD}:/qec
+      - ${PWD}/../LLI:/LLI
+
