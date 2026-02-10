@@ -1086,7 +1086,7 @@ class Sim:
         print(f'Completed baseline-2 for {self.benchmark}, {policy}')
         backlog = metadata['longest_backlog']
         backlog = metadata['total_backlog']
-        with open(os.path.join(args.directory, f'{args.benchmark}_opt_decoder_{args.policy}.pkl'), 'rb') as file:
+        with open(os.path.join(args.directory, f'{args.benchmark}_opt_decoder{args.policy}.pkl'), 'rb') as file:
             num_decoders = pickle.load(file)
         metadata = self.schedule(num_decoders=num_decoders, policy=policy)
         backlog2 = metadata['total_backlog']
@@ -1113,7 +1113,7 @@ if __name__ == "__main__":
     parser.add_argument('--test', action='store_true', help='Testing')
     args = parser.parse_args()
 
-    sim = Sim(args.benchmark, args.directory, fixed_decoder_latency=~args.variable_decoder_latency)
+    sim = Sim(args.benchmark, args.directory, fixed_decoder_latency=not args.variable_decoder_latency)
     if args.test:
         print(sim.num_benchmark_qubits, len(sim.alg_qubits))
         sim.test()
@@ -1130,11 +1130,11 @@ if __name__ == "__main__":
             num_decoders = pickle.load(file)
         _ = sim.get_decoder_sweep_for_best_decoder_sw(num_decoders, args.policy)
     if args.sweep_pw:
-        with open(os.path.join(args.directory, f'{args.benchmark}_opt_decoder_{args.policy}.pkl'), 'rb') as file:
+        with open(os.path.join(args.directory, f'{args.benchmark}_opt_decoder{args.policy}.pkl'), 'rb') as file:
             num_decoders = pickle.load(file)
         _ = sim.get_decoder_sweep_for_best_decoder(num_decoders, args.policy)
     if args.get_trace:
-        with open(os.path.join(args.directory, f'{args.benchmark}_opt_decoder_{args.policy}.pkl'), 'rb') as file:
+        with open(os.path.join(args.directory, f'{args.benchmark}_opt_decoder{args.policy}.pkl'), 'rb') as file:
             num_decoders = pickle.load(file)
         temp = sim.schedule_decoding_pw(num_decoders=num_decoders, policy=args.policy)
         with open(f'./{args.benchmark}_scheduling_{args.policy}.pkl', 'wb') as file:
