@@ -48,14 +48,17 @@ All environment variables required are set during the image build. The bash scri
 If you use the ideas or code of this work, please cite:
 
 ```bibtex
-@misc{Maurya2024,
-  doi = {10.48550/ARXIV.2406.17995},
-  url = {https://arxiv.org/abs/2406.17995},
+@inproceedings{Maurya2026,
+  series = {EUROSYS ’26},
+  title = {A Case for Elastic Quantum Error Correction Decoders},
+  url = {http://dx.doi.org/10.1145/3767295.3803584},
+  DOI = {10.1145/3767295.3803584},
+  booktitle = {Proceedings of the 21st European Conference on Computer Systems},
+  publisher = {ACM},
   author = {Maurya,  Satvik and Molavi,  Abtin and Albarghouthi,  Aws and Tannu,  Swamit},
-  keywords = {Quantum Physics (quant-ph),  Hardware Architecture (cs.AR),  FOS: Physical sciences,  FOS: Physical sciences,  FOS: Computer and information sciences,  FOS: Computer and information sciences},
-  title = {Managing Classical Processing Requirements for Quantum Error Correction},
-  publisher = {arXiv},
-  year = {2024},
-  copyright = {Creative Commons Attribution Non Commercial No Derivatives 4.0 International}
+  year = {2026},
+  month = Apr,
+  pages = {514–531},
+  collection = {EUROSYS ’26}
 }
 ```
